@@ -1,1 +1,1 @@
-# Data-Structures-and-Algorithms-in-Typescript
+# Data Structures and Algorithms in Typescript
