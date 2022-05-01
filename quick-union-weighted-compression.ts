@@ -28,7 +28,8 @@ class QuickUnion {
 
   private root(i: number): number {
     while (this.id[i] !== i) {
-      i = this.id[this.id[i]];
+      this.id[i] = this.id[this.id[i]];
+      i = this.id[i];
     }
     return i;
   }
