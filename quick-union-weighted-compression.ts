@@ -15,10 +15,12 @@
 class QuickUnion {
   private id: number[];
   private sz: number[];
+  private sets: number;
 
   constructor(n: number) {
     this.id = [];
     this.sz = [];
+    this.sets = n;
 
     for (let i = 0; i < n; i++) {
       this.id[i] = i;
@@ -49,10 +51,16 @@ class QuickUnion {
       this.id[qroot] = proot;
       this.sz[proot] += this.sz[qroot];
     }
+
+    this.sets--;
   }
 
   find(p: number, q: number): boolean {
     return this.root(p) === this.root(q);
+  }
+
+  count(): number {
+    return this.sets;
   }
 }
 
@@ -68,3 +76,4 @@ instance.union(0, 1);
 console.log(instance.find(0, 3)); // false
 console.log(instance.find(4, 6)); // true
 console.log(instance.find(0, 5)); // true
+console.log(instance.count()); // 2
