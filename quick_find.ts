@@ -9,7 +9,7 @@
  * - find: O(1)
  */
 
-class QuickFind {
+export default class QuickFind {
   private id: number[];
 
   constructor(n: number) {
@@ -35,8 +35,3 @@ class QuickFind {
     return this.id[p] === this.id[q];
   }
 }
-
-const instance = new QuickFind(10);
-instance.union(0, 6);
-console.log(instance.find(0, 5)); // false;
-console.log(instance.find(0, 6)); // true;
