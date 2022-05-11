@@ -12,7 +12,7 @@
  * * behaves as linear in the "real world".
  */
 
-class QuickUnion {
+export default class QuickUnion {
   private id: number[];
   private sz: number[];
   private sets: number;
@@ -63,17 +63,3 @@ class QuickUnion {
     return this.sets;
   }
 }
-
-const instance = new QuickUnion(10);
-instance.union(0, 6);
-instance.union(4, 0);
-instance.union(7, 0);
-instance.union(1, 8);
-instance.union(9, 1);
-instance.union(2, 1);
-instance.union(5, 1);
-instance.union(0, 1);
-console.log(instance.find(0, 3)); // false
-console.log(instance.find(4, 6)); // true
-console.log(instance.find(0, 5)); // true
-console.log(instance.count()); // 2
